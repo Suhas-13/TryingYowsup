@@ -13,15 +13,15 @@ class EchoLayer(YowInterfaceLayer):
         
         if True:
             if "late" in messageProtocolEntity.getBody().lower():
-                to="6582688660@s.whatsapp.net"
-                message="Hey I'm Suhas's bot, Suhas will be late today"
+                to="@s.whatsapp.net"
+                message="Hey I'm 's bot,  will be late today"
                 receipt = OutgoingReceiptProtocolEntity(messageProtocolEntity.getId(), messageProtocolEntity.getFrom(), 'read', messageProtocolEntity.getParticipant())
                 
                 outgoingMessageProtocolEntity = TextMessageProtocolEntity(message,to=to)
                     
                 self.toLower(receipt)
                 self.toLower(outgoingMessageProtocolEntity)
-                to="6593872246@s.whatsapp.net"
+                to="@s.whatsapp.net"
                 message="Sent."
                 receipt = OutgoingReceiptProtocolEntity(messageProtocolEntity.getId(), messageProtocolEntity.getFrom(), 'read', messageProtocolEntity.getParticipant())
                 
@@ -30,7 +30,7 @@ class EchoLayer(YowInterfaceLayer):
                 self.toLower(receipt)
                 self.toLower(outgoingMessageProtocolEntity)
             if "test" in messageProtocolEntity.getBody().lower():
-                to="6593872246@s.whatsapp.net"
+                to="@s.whatsapp.net"
                 message="Hi I am online and ready."
                 receipt = OutgoingReceiptProtocolEntity(messageProtocolEntity.getId(), messageProtocolEntity.getFrom(), 'read', messageProtocolEntity.getParticipant())
                 
@@ -39,7 +39,7 @@ class EchoLayer(YowInterfaceLayer):
                 self.toLower(receipt)
                 self.toLower(outgoingMessageProtocolEntity)
             if "connection" in messageProtocolEntity.getBody().lower():
-                to="6593872246@s.whatsapp.net"
+                to="@s.whatsapp.net"
                 message="Hi I am online and ready."
                 receipt = OutgoingReceiptProtocolEntity(messageProtocolEntity.getId(), messageProtocolEntity.getFrom(), 'read', messageProtocolEntity.getParticipant())
                 
@@ -48,7 +48,7 @@ class EchoLayer(YowInterfaceLayer):
                 self.toLower(receipt)
                 self.toLower(outgoingMessageProtocolEntity)
             if "reboot" in messageProtocolEntity.getBody().lower():
-                to="6593872246@s.whatsapp.net"
+                to="@s.whatsapp.net"
                 message="Commencing reboot."
                 receipt = OutgoingReceiptProtocolEntity(messageProtocolEntity.getId(), messageProtocolEntity.getFrom(), 'read', messageProtocolEntity.getParticipant())
                 
@@ -60,7 +60,7 @@ class EchoLayer(YowInterfaceLayer):
                 os.system('sudo shutdown -r now')
             if "factcheck" in messageProtocolEntity.getBody().lower():
                 try:
-                    to="6593872246@s.whatsapp.net"
+                    to="@s.whatsapp.net"
 
                     url="https://factchecktools.googleapis.com/v1alpha1/claims:search?query="+messageProtocolEntity.getBody().lower().split("+")[1]+"&key=AIzaSyCnJefaZN4-YhmiF1Zcpo4-qH3B5b30Ybk"
                     response=requests.get(url).json()
@@ -76,7 +76,7 @@ class EchoLayer(YowInterfaceLayer):
                 self.toLower(receipt)
                 self.toLower(outgoingMessageProtocolEntity)
             if "spam" in messageProtocolEntity.getBody().lower():
-                to="6593872246@s.whatsapp.net"
+                to="@s.whatsapp.net"
 
                 email=messageProtocolEntity.getBody().lower().split("+")[1]
                 message="Commencing storm"
